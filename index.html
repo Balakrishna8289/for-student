@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="lightslider.css"/>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="lightslider.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -16,9 +19,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto|Poppins|Inter|Serif"
     />
-    <link rel="stylesheet" href="lightslider.css" />
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="lightslider.js"></script>
     <title>For Student</title>
   </head>
 
@@ -47,11 +47,13 @@
               <a class="nav-link nav-links" href="#">Contact Us</a>
               <a class="nav-link nav-links" href="#">Login</a>
             </div>
+            <a class="search" id="search-bar">
+              <input class="search-txt" type="text" />
+              <button class="submit">
+                <i class="bi bi-search search-icon"></i>
+              </button>
+            </a>
           </div>
-          <div class="search-element">
-            <i class="bi bi-search search-icon"></i>
-          </div>
-        </div>
       </nav>
       <div class="heading-container">
         <img
@@ -109,11 +111,22 @@
     </div>
     <h1 class="explore-shoppeal mb-4">Explore Shoppeal</h1>
     <ul
-      id="autoWidth"
-      class="cs-hiddden course-list d-flex justify-content-center"
+      class="course-list d-flex justify-content-center"
     >
-      <li class="item-a">
-        <div class="course m-3">
+      <li class="item-a course m-3">
+          <a href="#" >
+            <img
+              src="https://i.ibb.co/d4WY0Ww/Rectangle-101.png"
+              alt="Rectangle-101"
+              class="course-img"
+            />
+            <div>
+              <h1 class="course-name">Data Science</h1>
+              <p class="course-count">3<span class="courses">Courses</span></p>
+            </div>
+          </a>
+      </li>
+      <li class="item-b course m-3">
           <a href="#" class="product-list">
             <img
               src="https://i.ibb.co/d4WY0Ww/Rectangle-101.png"
@@ -125,25 +138,8 @@
               <p class="course-count">3<span class="courses">Courses</span></p>
             </div>
           </a>
-        </div>
       </li>
-      <li class="item-b">
-        <div class="course m-3">
-          <a href="#" class="product-list">
-            <img
-              src="https://i.ibb.co/d4WY0Ww/Rectangle-101.png"
-              alt="Rectangle-101"
-              class="course-img"
-            />
-            <div>
-              <h1 class="course-name">Data Science</h1>
-              <p class="course-count">3<span class="courses">Courses</span></p>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="item-c">
-        <div class="course m-3">
+      <li class="item-c course m-3">
           <a class="product-list" href="#">
             <img
               src="https://i.ibb.co/d4WY0Ww/Rectangle-101.png"
@@ -155,10 +151,8 @@
               <p class="course-count">3<span class="courses">Courses</span></p>
             </div>
           </a>
-        </div>
       </li>
-      <li class="item-d">
-        <div class="course m-3">
+      <li class="item-d course m-3">
           <a class="product-list" href="#">
             <img
               src="https://i.ibb.co/d4WY0Ww/Rectangle-101.png"
@@ -170,22 +164,17 @@
               <p class="course-count">3<span class="courses">Courses</span></p>
             </div>
           </a>
-        </div>
       </li>
     </ul>
-
     <script>
-      $(document).ready(function () {
-        $("#autoWidth").lightSlider({
-          autoWidth: true,
-          loop: false,
-          dot: false,
-          onSliderLoad: function () {
-            $("#autoWidth").removeClass("cS-hidden");
-          },
-        });
-      });
+      var searchBox = document.getElementById("search-bar");
+      var icon = document.getElementsByClassName("submit")[0];
+      icon.onclick = function () {
+        searchBox.classList.toggle("active");
+      };
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
